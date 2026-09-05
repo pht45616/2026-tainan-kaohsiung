@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台南高雄 3 天 2 夜藝文交響與慢活之旅</title>
+    <!-- Favicon (Tainan & Kaohsiung Symphony/Art Icon: 🎵) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2338bdf8'/><stop offset='100%25' stop-color='%23f43f5e'/></linearGradient></defs><rect width='100' height='100' rx='28' fill='url(%23g)'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-size='52'>🎵</text></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0b0f19'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Style for Leaflet Dark Mode & Pins -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen font-sans antialiased">
+    <!-- Header / Hero Section -->
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-2 text-xs text-sky-400 font-bold mb-1 tracking-wider uppercase">
+                    <i data-lucide="compass" class="w-4 h-4"></i> TAINAN & KAOHSIUNG ITINERARY & MAP
+                </div>
+                <h1 id="trip-title" class="text-xl sm:text-2xl font-black tracking-tight text-white"></h1>
+                <p id="trip-subtitle" class="text-xs text-slate-400 mt-0.5"></p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
+                <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-sky-400"></i> <span id="trip-dates"></span>
+                </span>
+                <span class="bg-slate-900 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-400"></i> <span id="trip-travelers"></span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-3 pt-1">
+            <nav id="nav-tabs" class="flex flex-wrap items-center gap-2"></nav>
+        </div>
+    </header>
+
+    <!-- Main Content Panels -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <div id="panels-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
+        <p>台南高雄 3 天 2 夜藝文交響與慢活之旅 · 互動式旅遊行程地圖</p>
+    </footer>
+
+    <!-- App Scripts (Separated Data & Logic) -->
+    <script src="data.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>
